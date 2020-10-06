@@ -24,7 +24,8 @@ body {
     --gutter: 30px;
     --footer-height: 25px;
     background-image: url('/assets/Q-Kitchen.PNG');
-    font-family: 'Titillium Web', sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
     background-blend-mode: color-burn;
     /* background-color: var(--color2); */
 }
@@ -56,7 +57,7 @@ section {
 header {
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
+    background-color: hsla(200, 61%, 56%, 1);
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
@@ -86,8 +87,6 @@ header img {
     height: var(--header-height);
 }
 
-
-
 content {
     width: 80%;
 }
@@ -95,7 +94,7 @@ content {
 p {
     margin: var(--gutter);
 }
-  
+
 footer {
     position: fixed;
     width: 100%;
@@ -106,10 +105,10 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
-  
-  @keyframes pulse {
+
+@keyframes pulse {
     20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
+        transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
     }
 
     40% {
@@ -118,10 +117,10 @@ footer {
 
     60% {
         transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
+        }
 
     80% {
         transform: rotate3d(10, 10, 10, 50deg) scale(1);
     }
 
-  }
+    }
