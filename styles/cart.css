@@ -1,0 +1,19 @@
+table {
+    border: solid 1px;
+    width: 50%;
+}
+
+td, th {
+    border: solid 1px;
+}
+
+th {
+    background-color: mediumaquamarine;
+}
+
+tr:nth-child(even){
+    background-color: lightsteelblue;
+}
+
+
+
