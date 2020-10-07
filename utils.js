@@ -1,4 +1,15 @@
 
+export function findById(someArray, someId) {
+    for (let i = 0; i < someArray.length; i++) {
+        const item = someArray[i];
+        if (item.id === someId) {
+            return item;
+        }
+    } return null;
+}
+
+// export function calcLineItem() {}
+
 export function renderFoodItem(foodItem) {
     const li = document.createElement('li');
     const title = document.createElement('h3');
