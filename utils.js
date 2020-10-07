@@ -41,3 +41,8 @@ export function renderFoodItem(foodItem) {
 
     return li;
 }
+
+export function calcLineItem(quantity, amount) {
+    const lineItem = quantity * amount;
+    return lineItem;
+}

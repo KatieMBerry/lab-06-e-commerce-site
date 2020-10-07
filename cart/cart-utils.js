@@ -1,5 +1,5 @@
 
-import { findById } from '../utils.js';
+import { findById, calcLineItem } from '../utils.js';
 
 export function renderTableRow(cartItem, sourceOfTruth) {
     const tr = document.createElement('tr');
@@ -13,8 +13,8 @@ export function renderTableRow(cartItem, sourceOfTruth) {
     const price = foodData.price;
     const name = foodData.name;
     
-    const cartItemTotal = price * cartItem.quantity;
-
+    const cartItemTotal = calcLineItem(price, cartItem.quantity);
+    
     tdName.textContent = name;
     tdPrice.textContent = `$${price}`;
     tdQuantity.textContent = cartItem.quantity;

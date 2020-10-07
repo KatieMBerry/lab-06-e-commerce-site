@@ -13,13 +13,13 @@ for (let i = 0; i < cart.length; i++) {
     table.appendChild(tr);
 }
 
-const total = calculateTotal(cart, foodItems);
+const total = calcOrderTotal(cart, foodItems);
 
 const totalCell = document.querySelector('.total');
 
 totalCell.textContent = `Total: $${total}`;
 
-function calculateTotal(cartArray, foodItems) {
+export function calcOrderTotal(cartArray, foodItems) {
     let grandTotal = 0;
 
     for (let i = 0; i < cartArray.length; i++) {
