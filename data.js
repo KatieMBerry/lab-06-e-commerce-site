@@ -7,7 +7,6 @@ export const foodItems = [
         description: 'Low-fat, gluten-free and high protein.  Whassup Doc?',
         category: 'low-fat-cakes',
     },
-
     {
         id: 'charcuterie',
         name: 'Charcuterie',
@@ -16,7 +15,6 @@ export const foodItems = [
         description: 'Assorted meats, cheeses, fruits & veg.  Perfect for sharing.',
         category: 'shares',
     },
-
     {
         id: 'shortbread',
         name: 'Million Dollar Shortbread',
@@ -25,7 +23,6 @@ export const foodItems = [
         description: 'Rich and decadent.',
         category: 'cookies',
     },
-
     {
         id: 'torte',
         name: 'Chocolate Torte',
@@ -34,7 +31,6 @@ export const foodItems = [
         description: 'Dense and silky.  Great with coffee!',
         category: 'confections',
     },
-
     {
         id: 'assorted-cookies',
         name: 'Assorted Cookies',
@@ -43,7 +39,6 @@ export const foodItems = [
         description: 'Assorted meats, cheeses, fruits & veg.  Perfect for sharing.',
         category: 'gifts',
     },
-
     {
         id: 'croissant',
         name: 'Croissants',

@@ -21,3 +21,16 @@ test('should take in a cartItem and return a tr ele with the appropriate content
     expect.equal(actual.outerHTML, expected);
 });
 
+test('should take in cart line totals and return a tr ele grand total value', (expect) => {
+    const cart = {
+        id: 'carrot-cake',
+        quantity: 2
+    };
+
+    const expected = '<tr><td>Total: </td><td>$31.98</td><tr>';
+
+    const actual = renderTableRow(cart);
+    
+    // assert
+    expect.equal(actual.outerHTML, expected);
+});

@@ -8,8 +8,6 @@ export function findById(someArray, someId) {
     } return null;
 }
 
-// export function calcLineItem() {}
-
 export function renderFoodItem(foodItem) {
     const li = document.createElement('li');
     const title = document.createElement('h3');
