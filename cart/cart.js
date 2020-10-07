@@ -19,15 +19,15 @@ const totalCell = document.querySelector('.total');
 totalCell.textContent = `Total: $${total}`;
 
 function calculateTotal(cartArray) {
-    let accumulator = 0;
+    let grandTotal = 0;
 
     for (let i = 0; i < cartArray.length; i++) {
-        const item = cartArray[i];
-        const trueItem = findById(foodItems, item.id);
+        const cartItem = cartArray[i];
+        const item = findById(foodItems, cartItem.id);
 
-        const subTotal = trueItem.price * item.quantity;
+        const subTotal = item.price * item.quantity;
 
-        accumulator += subTotal;
+        grandTotal += subTotal;
     }
-    return accumulator;
+    return grandTotal;
 }

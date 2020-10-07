@@ -26,4 +26,3 @@ export function renderTableRow(cartItem) {
 
     return tr;
 }
-
