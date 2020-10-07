@@ -5,8 +5,10 @@ export function findById(someArray, someId) {
         if (item.id === someId) {
             return item;
         }
-    }
+    } return null;
 }
+
+// export function calcLineItem() {}
 
 export function renderFoodItem(foodItem) {
     const li = document.createElement('li');

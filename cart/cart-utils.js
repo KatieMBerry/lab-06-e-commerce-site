@@ -14,10 +14,10 @@ export function renderTableRow(cartItem) {
 
     const price = foodData.price;
     const name = foodData.name;
-    console.log(price);
+    
     tdPrice.textContent = `$${price}`;
     tdName.textContent = name;
-
+    
     const total = price * cartItem.quantity;
 
     tdTotal.textContent = `$${total}`;

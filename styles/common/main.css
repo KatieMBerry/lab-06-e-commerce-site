@@ -57,7 +57,7 @@ section {
 header {
     display: flex;
     justify-content: flex-end;
-    background-color: hsla(200, 61%, 56%, 1);
+    background-color: lightsteelblue;
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
