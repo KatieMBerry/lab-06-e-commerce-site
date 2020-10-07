@@ -1,26 +1,24 @@
-import { foodItems as sourceOfTruth } from '../data.js';
-import { findById } from '../utils.js';
 
-export function renderTableRow(cartItem) {
+import { findById, calcLineItem } from '../utils.js';
+
+export function renderTableRow(cartItem, sourceOfTruth) {
     const tr = document.createElement('tr');
     const tdName = document.createElement('td');
     const tdPrice = document.createElement('td');
     const tdQuantity = document.createElement('td');
     const tdTotal = document.createElement('td');
 
-    tdQuantity.textContent = cartItem.quantity;
-
     const foodData = findById(sourceOfTruth, cartItem.id);
-
+    
     const price = foodData.price;
     const name = foodData.name;
     
-    tdPrice.textContent = `$${price}`;
-    tdName.textContent = name;
+    const cartItemTotal = calcLineItem(price, cartItem.quantity);
     
-    const total = price * cartItem.quantity;
-
-    tdTotal.textContent = `$${total}`;
+    tdName.textContent = name;
+    tdPrice.textContent = `$${price}`;
+    tdQuantity.textContent = cartItem.quantity;
+    tdTotal.textContent = `$${cartItemTotal}`;
 
     tr.append(tdName, tdPrice, tdQuantity, tdTotal);
 
