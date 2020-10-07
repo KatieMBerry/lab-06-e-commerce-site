@@ -53,3 +53,30 @@ export const foodItems = [
         category: 'breads',
     },
 ];
+
+export const cart = [ 
+    {
+        id: 'carrot-cake',
+        quantity: 2
+    },
+    {
+        id: 'charcuterie',
+        quantity: 1,
+    },
+    {
+        id: 'shortbread',
+        quantity: 3,
+    },
+    {
+        id: 'torte',
+        quantity: 1,
+    },
+    {
+        id: 'assorted-cookie',
+        quantity: 5,
+    },
+    {
+        id: 'croissant',
+        quantity: 12,
+    },
+];
