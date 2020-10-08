@@ -1,7 +1,15 @@
+body {
+    background-color:peachpuff;
+    /* background-image: url('../assets/pattern.jpg'); */
+}
+
+header {
+    background-color: papayawhip
+}
+
 table {
     border: solid 1px;
     width: 100%;
-
     font-family: cursive;
     font-size: 20px;
 }
