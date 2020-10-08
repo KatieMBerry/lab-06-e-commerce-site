@@ -32,9 +32,20 @@ ul {
     list-style: none;
 }
 
-button {
+.add-button, .checkout {
     background-color: lightsalmon;
     border: solid 2px lightsalmon;
+    height: 30px;
+    width: 200px;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.remove-item-button {
+    background-color: aquamarine;
+    border: solid 2px aquamarine;
     height: 30px;
     width: 200px;
     font-family: cursive;

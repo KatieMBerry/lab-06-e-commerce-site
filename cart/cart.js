@@ -1,9 +1,9 @@
 import { foodItems } from '../data.js';
 import { renderTableRow } from './cart-utils.js';
-import { findById } from '../utils.js';
-import { cart } from '../data/static-cart.js';
+import { findById, getFromLocalStorage, CART } from '../utils.js';
 
 const table = document.querySelector('tbody');
+const cart = getFromLocalStorage(CART) || [];
 
 for (let i = 0; i < cart.length; i++) {
     const cartItem = cart[i];
@@ -13,10 +13,21 @@ for (let i = 0; i < cart.length; i++) {
     table.appendChild(tr);
 }
 
+const orderButton = document.querySelector('#order-button');
+orderButton.addEventListener('click', () => {
+    const stringyCart = JSON.stringify(cart, true, 2);
+    // if (cart !== []) {
+    alert(stringyCart);
+    // } else {
+        // alert('You don\'t have any items in your cart. Go back to the Home Page to select an item!');
+    // localStorage.removeItem(CART);
+    localStorage.clear();
+    window.location.href = '/';
+    // }
+});
+
 const total = calcOrderTotal(cart, foodItems);
-
 const totalCell = document.querySelector('.total');
-
 totalCell.textContent = `Total: $${total}`;
 
 export function calcOrderTotal(cartArray, foodItems) {
