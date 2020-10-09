@@ -17,20 +17,22 @@
 <body>
     <header>
         <div class="gutter-right logo">
-            <a href="../products">Products</a>
-            <a href="../cart">Cart</a>
+            <button><a href="../products">Products</a></button>
+            <button><a href="../cart">Cart</a></button>
+            <button><a href="../index.html">Home</a></button>
         </div>
     </header>
     <main>
         <section class="main-section">
             Add a New Product
-            <form action="submit">
-                    <input placeholder="id" >
-                    <input placeholder="name">
-                    <input placeholder="link-to-image">
-                    <input placeholder="price">
-                    <input placeholder="description">
-                    <input placeholder="category">
+            <form>
+                    <input placeholder="id" name="id">
+                    <input placeholder="name" name=name>
+                    <input placeholder="link-to-image" name="image">
+                    <input placeholder="price" name="price">
+                    <input placeholder="description" name="description">
+                    <input placeholder="category" name="category">
+                    <button>Submit New Food Item</button>
             </form>
         </section>
     </main>
@@ -38,7 +40,7 @@
         
     </footer>
 
-    <script type="module" src="./cart.js"></script>
+    <script type="module" src="./admin.js"></script>
 </body>
 
 </html>
