@@ -3,9 +3,13 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-image: url('../assets/pattern.jpg');
+    background-color: lightgoldenrodyellow;
+    /* background-image: url('../assets/pattern.jpg'); */
 }
 
+header {
+    background-color: lightgoldenrodyellow;
+}
 .food-items {
     font-family: cursive;
     font-size: 20px;

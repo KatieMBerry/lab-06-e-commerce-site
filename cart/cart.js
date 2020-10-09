@@ -1,6 +1,7 @@
-import { foodItems } from '../data.js';
+import { foodItems as hardCodedFoods } from '../data.js';
 import { renderTableRow } from './cart-utils.js';
-import { findById, getFromLocalStorage, CART } from '../utils.js';
+import { findById, getFromLocalStorage } from '../utils.js';
+import { CART } from '../constants.js';
 
 const table = document.querySelector('tbody');
 const cart = getFromLocalStorage(CART) || [];
@@ -8,7 +9,7 @@ const cart = getFromLocalStorage(CART) || [];
 for (let i = 0; i < cart.length; i++) {
     const cartItem = cart[i];
     
-    const tr = renderTableRow(cartItem, foodItems);
+    const tr = renderTableRow(cartItem, hardCodedFoods);
     
     table.appendChild(tr);
 }
@@ -16,26 +17,22 @@ for (let i = 0; i < cart.length; i++) {
 const orderButton = document.querySelector('#order-button');
 orderButton.addEventListener('click', () => {
     const stringyCart = JSON.stringify(cart, true, 2);
-    // if (cart !== []) {
     alert(stringyCart);
-    // } else {
-        // alert('You don\'t have any items in your cart. Go back to the Home Page to select an item!');
-    // localStorage.removeItem(CART);
+
     localStorage.clear();
     window.location.href = '/';
-    // }
 });
 
-const total = calcOrderTotal(cart, foodItems);
+const total = calcOrderTotal(cart, hardCodedFoods);
 const totalCell = document.querySelector('.total');
 totalCell.textContent = `Total: $${total}`;
 
-export function calcOrderTotal(cartArray, foodItems) {
+export function calcOrderTotal(cartArray, hardCodedFoods) {
     let grandTotal = 0;
 
     for (let i = 0; i < cartArray.length; i++) {
         const cartItem = cartArray[i];
-        const item = findById(foodItems, cartItem.id);
+        const item = findById(hardCodedFoods, cartItem.id);
 
         const subTotal = item.price * cartItem.quantity;
 

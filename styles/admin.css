@@ -1,0 +1,23 @@
+body {
+    background-color: lightsteelblue;
+     /* background-image: url('../assets/pattern.jpg'); */
+}
+
+header {
+    background-color: lightsteelblue;
+}
+
+section {
+    background-color: lightsalmon;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 300px;
+    margin: 30px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}

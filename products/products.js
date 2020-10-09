@@ -1,12 +1,14 @@
-import { foodItems } from '../data.js';
-import { renderFoodItem } from '../utils.js';
+import { renderFoodItem, seedAndGetProducts } from '../utils.js';
+
+const localStorageFoods = seedAndGetProducts();
 
 const ul = document.querySelector('#list');
 
-for (let i = 0; i < foodItems.length; i++) {
-    const item = foodItems[i];
+for (let i = 0; i < localStorageFoods.length; i++) {
+    const item = localStorageFoods[i];
 
     const li = renderFoodItem(item);
 
     ul.appendChild(li);
 }
+

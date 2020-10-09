@@ -1,5 +1,26 @@
+import { foodItems as hardCodedFoods } from '../data.js';
+import { PRODUCTS, CART } from './constants.js';
 
-export const CART = 'CART';
+export function seedAndGetProducts() {
+    let localStorageFoods = JSON.parse(localStorage.getItem(PRODUCTS));
+
+    if (!localStorageFoods) {
+        const stringyFoods = JSON.stringify(hardCodedFoods);
+
+        localStorage.setItem(PRODUCTS, stringyFoods);
+
+        localStorageFoods = hardCodedFoods;
+    }
+    return localStorageFoods;
+}
+
+export function addFood(newFood) {
+    const productArray = getFromLocalStorage(PRODUCTS);
+
+    productArray.push(newFood);
+
+    setInLocalStorage(PRODUCTS, productArray);
+}
 
 export function findById(someArray, someId) {
     for (let i = 0; i < someArray.length; i++) {
@@ -9,6 +30,7 @@ export function findById(someArray, someId) {
         } 
     } 
 }
+
 
 export function renderFoodItem(foodItem) {
     const li = document.createElement('li');
@@ -54,14 +76,21 @@ export function renderFoodItem(foodItem) {
         } else {
             itemInCart.quantity++;
         }
-        
         setInLocalStorage(CART, cart);
     });
+
     removeButton.textContent = 'Remove One';
     removeButton.addEventListener('click', () => {
-        const cart = getFromLocalStorage(CART);
+        const cart = getFromLocalStorage(CART) || [];
         const itemInCart = findById(cart, foodItem.id);
-        itemInCart.quantity--;
+
+        if (itemInCart) {
+            if (itemInCart.quantity !== 0) {
+                itemInCart.quantity--;
+            }
+        }
+
+        setInLocalStorage(CART, cart);
     });
 
     li.appendChild(button);
@@ -77,15 +106,12 @@ export function calcLineItem(quantity, amount) {
 
 export function getFromLocalStorage(key) {
     const item = localStorage.getItem(key);
-
     return JSON.parse(item);
 }
 
 // this function will not return anything
-export function setInLocalStorage(key, value) {
-    const stringyItem = JSON.stringify(value);
-
-    localStorage.setItem(key, stringyItem);
-
-    return value;
+export function setInLocalStorage(PRODUCTS, productArray) {
+    const stringyItem = JSON.stringify(productArray);
+    localStorage.setItem(PRODUCTS, stringyItem);
+    return productArray;
 }
