@@ -55,7 +55,7 @@ export function renderFoodItem(foodItem) {
     description.textContent = foodItem.description;
     li.appendChild(description);
 
-    image.src = `./assets/${foodItem.image}`;
+    image.src = `../assets/${foodItem.image}`;
     li.appendChild(image);
 
     price.textContent = `$${foodItem.price.toFixed(2)}`;
