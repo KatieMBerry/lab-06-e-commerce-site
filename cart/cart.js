@@ -20,7 +20,7 @@ orderButton.addEventListener('click', () => {
     alert(stringyCart);
 
     localStorage.clear();
-    window.location.href = '/';
+    window.location.href = '../index.html';
 });
 
 const total = calcOrderTotal(cart, hardCodedFoods);
